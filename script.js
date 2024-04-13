@@ -1,19 +1,19 @@
 // Write a function to reverse an array in place.
 
-// let arr=[1,2,3,4,5,6,7,8,9,10]
+let arr=[1,2,3,4,5,6,7,8,9,10]
 
 
-// for(let start=0,end=arr.length-1;start<end&&end>start;start++,end--){
-// let sum=arr[start]+arr[end]
-// arr[end]=sum-arr[end]
-// arr[start]=sum-arr[start]
+for(let start=0,end=arr.length-1;start<end&&end>start;start++,end--){
+let sum=arr[start]+arr[end]
+arr[end]=sum-arr[end]
+arr[start]=sum-arr[start]
 
-// }
+}
 
   
-// console.log(arr,"Arr")
+console.log(arr,"Arr")
 
-// /Write a function to remove duplicates from an array.
+/Write a function to remove duplicates from an array.
 
 const removeDublicate=(arr)=>{
 
