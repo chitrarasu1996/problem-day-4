@@ -84,25 +84,24 @@ console.log(findCommonElements(arr1, arr2),"common");
 
 const sortingArr=(arr)=>{
 
-for(let i=0;i<arr.length;i++){
-let min=i;
-    for(let j=i+1;j<arr.length;j++){
-if(arr[j]<arr[min]){
-    min=j
- 
-}
-    }
-
-    if(min!==i){
+    for(let i=0;i<arr.length;i++){
+        let min=i;
+        for(let j=i+1;j<arr.length;j++){
+            if(arr[min]>arr[j]){
+           min=j
+            }
+        }
+        if(min!==i){
 [arr[i],arr[min]]=[arr[min],arr[i]]
+
+        }
     }
 
-}
 return arr
 }
-let withoutSorted=[4,1,2,4,6,8,5]
+let withoutSorted=[4,1,2,4,6,8,5,7]
 
-console.log(sortingArr(withoutSorted))
+console.log(sortingArr(withoutSorted),"sorted")
 
 
 // Write a function to rotate an array to the right by k steps.
@@ -110,15 +109,14 @@ console.log(sortingArr(withoutSorted))
 
 const rotateArry=(arr,k)=>{
 
-    
-for(let i=arr.length-1,j=0;i>=0&&j<arr.length;i--,j++){
-
-
-
+   k=k%arr.length
+for(let i=0;i<k;i++){
+    arr.unshift(arr.pop())
 }
+
 return arr
 
 }
 let arr4=[1,2,3,4,5]
-let k=6
-console.log(rotateArry(arr4,k),"revesrd")
+let k=3
+console.log(rotateArry(arr4,k),"rotated")
