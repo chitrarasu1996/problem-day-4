@@ -1,57 +1,85 @@
 // Write a function to reverse an array in place.
 
-let arr=[1,2,3,4,5,6,7,8,9,10]
+// let arr=[1,2,3,4,5,6,7,8,9,10]
 
 
-for(let start=0,end=arr.length-1;start<end&&end>start;start++,end--){
-let sum=arr[start]+arr[end]
-arr[end]=sum-arr[end]
-arr[start]=sum-arr[start]
+// for(let start=0,end=arr.length-1;start<end&&end>start;start++,end--){
+// let sum=arr[start]+arr[end]
+// arr[end]=sum-arr[end]
+// arr[start]=sum-arr[start]
 
-}
+// }
 
   
-console.log(arr,"Arr")
+// console.log(arr,"Arr")
 
-/Write a function to remove duplicates from an array.
+// // Write a function to remove duplicates from an array.
 
-const removeDublicate=(arr)=>{
+// const removeDublicate=(arr)=>{
 
-for(let i=0;i<arr.length;i++){
-    if(arr[i]!==-1){
-        for(let j=i+1;j<arr.length;j++){
-            if(arr[i]===arr[j]){
-                arr[j]=-1
-            }
+// for(let i=0;i<arr.length;i++){
+//     if(arr[i]!==-1){
+//         for(let j=i+1;j<arr.length;j++){
+//             if(arr[i]===arr[j]){
+//                 arr[j]=-1
+//             }
     
-        }
-    }
+//         }
+//     }
   
-}
-let index=0;
-for(let i=0;i<arr.length;i++){
-    if(arr[i]!==-1){
-        arr[index++]=arr[i]
-    }
-}
+// }
+// let index=0;
+// for(let i=0;i<arr.length;i++){
+//     if(arr[i]!==-1){
+//         arr[index++]=arr[i]
+//     }
+// }
 
-arr.length=index
-return arr  
-}
-const arrr1=[1,5,2,5,3,4,5,1,4]
-console.log(removeDublicate(arrr1))
+// arr.length=index
+// return arr  
+// }
+// const arrr1=[1,5,2,5,3,4,5,1,4]
+// console.log(removeDublicate(arrr1))
 
 // /Write a function to find the common elements between two arrays.
 
 const findCommonElements=(arr1,arr2)=>{
 
-    
 
+    for(let i=0;i<arr1.length;i++){
+
+let common=false;
+
+     for(let j=0;j<arr2.length;j++){
+
+           if(arr1[i]==arr2[j]){
+            common=true
+            break;
+           }
+        }
+
+        if(!common){
+arr1[i]=-1
+        }
+    }
+
+ let index=0;
+
+for(let i=0;i<arr1.length;i++){
+    if(arr1[i]!==-1){
+       arr1[index++] =arr1[i]
+    }
+    
+}
+
+arr1.length=index
+return arr1
 }
 const arr1 = [1, 2, 3, 4, 5];
 const arr2 = [3, 4, 5, 6, 7];
 
-console.log(findCommonElements(arr1, arr2)); 
+console.log(findCommonElements(arr1, arr2),"common"); 
+
 // Write a function to merge two sorted arrays into a single sorted array.
 
 const sortingArr=(arr)=>{
@@ -82,10 +110,10 @@ console.log(sortingArr(withoutSorted))
 
 const rotateArry=(arr,k)=>{
 
-for(let i=0;i<k;i++){
+    
+for(let i=arr.length-1,j=0;i>=0&&j<arr.length;i--,j++){
 
-let lastEle=arr.pop();
-arr.unshift(lastEle)
+
 
 }
 return arr
